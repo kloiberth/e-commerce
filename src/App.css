@@ -78,3 +78,26 @@
   width: 10rem;
   height: 10rem;
 }
+.product-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product__img{
+  width: 20rem;
+  height: 20rem;
+}
+.card__info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.card__info>h2{
+  text-align: center;
+}
+.items-card{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

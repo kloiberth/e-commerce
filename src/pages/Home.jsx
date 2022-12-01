@@ -30,6 +30,7 @@ const Home = () => {
                             categories.map(category => (
                                 <ListGroup.Item onClick={() => dispatch(filterProductsThunk(category.id))}
                                     style={{ cursor: 'pointer' }}
+                                    key={category.id}
                                 >
                                     {category.name}
                                 </ListGroup.Item>
@@ -56,13 +57,14 @@ const Home = () => {
                     <Row xs={1} md={2} lg={3} className="g-4">
                         {products.map(product => (
                             <Col key={product.id}>
-                                <Card>
+                                <Card className='card__product'>
                                     <Link className='card__link' to={`/product/${product.id}`}>
                                         <Card.Img className='card__img' variant="top" src={product.productImgs[0]} alt={product.title} />
+                                        <div className='line'></div>
                                         <Card.Body>
-                                            <Card.Title>{product.title}</Card.Title>
-                                            <Card.Text>
-                                                {product.price}
+                                            <Card.Title className='card__title'>{product.title}</Card.Title>
+                                            <Card.Text className='card__text'>
+                                                ${product.price}
                                             </Card.Text>
                                         </Card.Body>
                                     </Link>

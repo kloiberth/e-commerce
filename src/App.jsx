@@ -7,8 +7,9 @@ import Login from './pages/Login'
 import NavBar from './components/NavBar'
 import LoadingScreen from './components/LoadingScreen'
 import { useSelector } from 'react-redux'
-import Cart from './pages/Cart'
 import { Container } from 'react-bootstrap'
+import ProtectedRoutes from './components/ProtectedRoutes'
+import Cart from './components/Cart'
 
 function App() {
 
@@ -22,9 +23,12 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/product/:id' element={<ProductsDetails />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/purchases' element={<Purchases />} />
+          <Route path='/cart' element={<Cart/>} />
+
           <Route path='/login' element={<Login />} />
+          <Route element={<ProtectedRoutes/>}>
+            <Route path='/purchases' element={<Purchases />} />
+          </Route>
         </Routes>
       </Container>
 
